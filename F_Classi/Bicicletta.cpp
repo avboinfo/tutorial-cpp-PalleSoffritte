@@ -20,7 +20,7 @@ class Bicicletta {
 
 int main()
 {
-    Bicicletta x(16,"verdino");
+    Bicicletta x(10,"bianco");
     Bicicletta y(14,"rossastro");
 
     x.presentati();
