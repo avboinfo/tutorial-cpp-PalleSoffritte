@@ -1,18 +1,20 @@
 /*
-** BattleField.cpp una classe definita da noi che spupazza le matrici come nessuno mai
-** Sandro Gallo - 15/04/2024
+Mauro Marinelli - 20/04/2024
 */
-using namespace std;
+
 #include <iostream>
 using namespace std;
-const char SHIP ='X';
+
+// DIM, SHIP, MISS, HIT, VOID
 const int DIM = 10;
-const char MISS = 'O';
-const char HIT= '*';
+const char SHIP = 'X';
+const char MISS = '.';
+const char HIT = '*';
 const char VOID = '-';
+
 class BattleField {
 
-  private:
+  public:
     char m[DIM][DIM];
 
   public:
@@ -47,6 +49,12 @@ class BattleField {
         cout << endl << " ------------------------------------------------------ " << endl;
     }
 
+    void bomb() {
+        int x = rand() % DIM;
+        int y = rand() % DIM;
+        m[x][y] = '*';
+    }
+
     void placeHorizontalShip(int len) {
         if (len<=0 || len>=DIM) return;
         int x = rand() % (DIM);
@@ -62,3 +70,4 @@ class BattleField {
     }
 
 };
+
